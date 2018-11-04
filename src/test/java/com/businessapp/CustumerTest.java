@@ -90,7 +90,7 @@ final Customer c3 = new Customer("HABS3A", "Habibi Baba");
 		assertEquals("", c1.getNotes());
 		
 	}
-	
+	//
 	private Matcher is(boolean b) {
 		// TODO Auto-generated method stub
 		return null;
