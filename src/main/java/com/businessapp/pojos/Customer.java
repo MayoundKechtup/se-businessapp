@@ -58,36 +58,42 @@ public class Customer implements EntityIntf  {
 	public String getId() {
 		return id;
 	}
+	public void setId(String id) {
+		this.id= new String (id);
+		
+	}
 
 	public String getName() {
 		return name;
 	}
-
-	public List<String> getContacts() {
-		return contacts;
-	}
-
-	public List<LogEntry> getNotes() {
-		return notes;
-	}
-
-	public CustomerStatus getStatus() {
-		return status;
-	}
-
+	
 	public Customer setName( String name ) {
 		this.name = name;
 		return this;
 	}
-
+	
+	public List<String> getContacts() {
+		return contacts;
+	}
+	
 	public Customer addContact( String contact ) {
 		contacts.add( contact );
 		return this;
 	}
 
+	public CustomerStatus getStatus() {
+		return status;
+	}
 	public Customer setStatus( CustomerStatus status ) {
 		this.status = status;
 		return this;
+	}
+	public List<LogEntry> getNotes() {
+		return notes;
+	}
+	public void setNotes(String note){
+		this.notes.add(new LogEntry(note));
+		
 	}
 
 }
