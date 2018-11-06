@@ -59,7 +59,7 @@ public class Customer implements EntityIntf  {
 		return id;
 	}
 	public void setId(String id) {
-		this.id= new String (id);
+		this.id= id;
 		
 	}
 

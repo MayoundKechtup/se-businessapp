@@ -24,21 +24,21 @@ final Customer c3 = new Customer("HABS3A", "Habibi Baba");
 	}
 	
 	@Test
-	public void testGetId() {
+	public void testSetGetId() {
 		
 		final String test= "SABUE2A";
 		c1.setId(test);
+		
+		assertThat(test == c1.getId(), is(true));		
 		assertEquals(test, c1.getId());
+		
 		c1.setId(empty);
 		assertEquals(empty, c1.getId());
+		
 	//	c1.setId(null);
 	//	assertNull(c1.getId());
-		//assertThat(test == c1.getId(), is(true));		
-		
-		final Customer cId = new Customer("SUASNUN", "Paul Punter");
-		 assertEquals("SUASNUN", cId.getId());
-		 final Customer cIdNull= new Customer (null , "Max Munter");
-		 //	 assertThat(cIdNull.getId(), not(EqualTo(null));
+
+		 
 	}
 	
 	@Test
@@ -47,7 +47,7 @@ final Customer c3 = new Customer("HABS3A", "Habibi Baba");
 		c1.setName(testName);
 		assertEquals(testName, c1.getName());
 		
-		//assertThat(testName == c1.getName(), is(true));
+		assertThat(testName == c1.getName(), is(true));
 		
 		c1.setName(empty);
 		assertEquals(empty, c1.getName());
@@ -80,19 +80,20 @@ final Customer c3 = new Customer("HABS3A", "Habibi Baba");
 	}
 	@Test 
 	public void testSetGetNotes() {
-		c1.setNotes("note");
+	//	c1.setNotes("note");
 		//assertEquals("note", c1.getNotes().get(0).getLog());
 		
-		c1.setNotes(null);
-		assertNull(null, c1.getNotes());
+		//c1.setNotes(null);
+	//	assertNull(null, c1.getNotes());
 		
-		c1.setNotes("");
-		assertEquals("", c1.getNotes());
+		//c1.setNotes("");
+	//	assertEquals("", c1.getNotes());
+		
 		
 	}
 	//
-	private Matcher is(boolean b) {
-		// TODO Auto-generated method stub
-		return null;
-	}
+//	private Matcher is(boolean b) {
+//		// TODO Auto-generated method stub
+//		return null;
+//	}
 }
