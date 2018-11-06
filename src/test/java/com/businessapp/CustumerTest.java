@@ -35,9 +35,8 @@ final Customer c3 = new Customer("HABS3A", "Habibi Baba");
 		c1.setId(empty);
 		assertEquals(empty, c1.getId());
 		
-	//	c1.setId(null);
-	//	assertNull(c1.getId());
-
+		c1.setId(null);
+		assertNull(c1.getId());
 		 
 	}
 	
@@ -80,20 +79,12 @@ final Customer c3 = new Customer("HABS3A", "Habibi Baba");
 	}
 	@Test 
 	public void testSetGetNotes() {
-	//	c1.setNotes("note");
-		//assertEquals("note", c1.getNotes().get(0).getLog());
+		c1.setNotes("note");
+		assertEquals("note", c1.getNotes().get(1).getLog());
 		
-		//c1.setNotes(null);
-	//	assertNull(null, c1.getNotes());
-		
-		//c1.setNotes("");
-	//	assertEquals("", c1.getNotes());
+		c1.setNotes(empty);
+		assertEquals(empty, c1.getNotes().get(2).getLog());
 		
 		
 	}
-	//
-//	private Matcher is(boolean b) {
-//		// TODO Auto-generated method stub
-//		return null;
-//	}
 }
