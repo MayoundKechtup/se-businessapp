@@ -1,0 +1,86 @@
+﻿Status
+Der Status sagt aus, wie weit die Arbeit an dem Anwendungsfall gediehen ist. In Arbeit, bereit zum Review, im Review, abgelehnt und abgenommen sind Beispiele.
+Auslöser (rationale oder trigger)
+Der fachliche Grund bzw. die Gründe dafür, dass dieser Anwendungsfall ausgeführt wird.
+
+Invarianten
+Alle Bedingungen, die innerhalb und durch den Anwendungsfall nicht verändert werden dürfen, also auch in einem Misserfolgs- oder Fehlerszenario immer noch gewährleistet werden müssen.
+
+Nachbedingung/Ergebnis (postconditions)
+Der Zustand, der nach einem erfolgreichen Durchlauf des Anwendungsfalls erwartet wird.
+
+Alternative Ablaufschritte (alternative flow)
+Dies sind Szenarien, die sich außerhalb des Standardablaufs auch bei der (versuchten) Zielerreichung des Anwendungsfalls ereignen können. Sie werden meistens als konditionale Verzweigungen der normalen Ablaufschritte dargestellt. An ihrem Ende steht ein Misserfolg, die Zielerreichung des Primärakteurs oder eine Rückkehr zum Standardablauf.
+
+Hinweise
+Kurze Erklärungen zum besseren Verständnis, Hinweise zu Nebeneffekten, Mengengerüsten soweit erforderlich und alles andere, das nicht weiter oben dargestellt werden kann.
+
+
+UC 01.01 Passwort ändern
+Beschreibung.
+Im Anwendungsfall möchte der Akteur sein Passswort ändern.
+Beteiligte Akteur:
+Beteiligt ist der Akteur Kunde, Systemadmin
+Status:
+initial Zustand Version 1
+Verwendete Anwendungsfälle:
+keine
+Auslöser:
+Grund ist die intention das Passwort zu aktualisieren.
+Vorbedingungen;
+Der Kunde muss Angemeldet sein.
+Invarianten:
+
+Nachbedingung:
+Der Kunde erhält eine E-Mail in dem er benachrichtig wird, dass sein Passwort geändert wurde.
+Standardablauf:
+1. Der Kunde meldet sich an
+2. Der Kunde sieht sein Konto ein 
+3. Der Kunde wählt "Konto bearbeiten" aus
+4. Der Kunde wählt "Passwort ändern" aus
+5. Der Kunde ändert sein Passwort
+6. Der Kunde erhält eine Benachrichtigungs-E-Mail 
+
+Alternative Ablaufschritte:
+
+Der Kunde kann sich nicht anmelden, da er sein Passwort vergessen hat. 
+Der Kunde muss sein Passwort zurücksetzen mithilfe seiner E-Mail Adresse. 
+
+Hinweise:
+keine
+
+US 01.02 Kunde löschen
+Beschreibung: 
+Im Anwendungsfall möchte der Akteur einen Kunden löschen
+Beteiligter Akteur:
+Beteiligt ist der sekundäre Akteur, Admin
+Status:
+initial Zustand Version 1
+Verwendete Anwendungsfälle:
+keine
+Auslöser:
+Kunde wünscht Löschung des Kontos
+Vorbedingung:
+Der Admin muss sich Angemeldet haben. Der Kunde muss Existieren.
+Invarianten:
+
+Nachbedingungen:
+keine 
+Standardablauf:
+1. Der Admin meldet sich an
+2. Der Admin wählt "Kunden verwalten" aus
+3. Der Admin wählt "Kunde löschen" aus
+4. Der Admin sucht nach den Kunden
+5. Der Admin löscht den Kunden
+Alternative Ablaufschritte:
+keine
+
+Hinweise:
+keine
+
+
+
+
+
+
+
