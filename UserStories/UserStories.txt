@@ -1,0 +1,48 @@
+UserStories
+
+3-5 Akteure:
+1. Anonymer Besucher
+2. Kunde / Neukunde
+3. Admin
+
+UserStories
+US#010.01 Als <Akteur> möchte ich <Intention>
+US#010.02 Als <Akteur> möchte ich <Intention>, um <Ziel> zu erreichen.
+
+
+Kunde/Neukunde:
+US#010.01: Als Kunde möchte ich mein Konto einsehen, um ggf. meine Informationen bearbeiten.
+US#010.02: Als Kunde möchte ich mein Passwort ändern, um die Sicherheit meines Kontos zu gewährleisten.
+US#010.03: Als Kunde möchte ich mein Passwort zurücksetzen, falls ich es vergessen habe.
+US#010.04: Als Kunde möchte ich Newsletter bekommen, um über die aktuellsten Angeboten und Neuerungen informiert zu werden.
+US#010.05: Als Kunde möchte ich eine Bestellbestätigung erhalten. 
+US#010.06: Als Kunde möchte ich eine Bestätigung meiner Reservierung erhalten.
+US#010.07: Als Kunde möchte ich meine Reservierung stornieren können.
+US#010.08: Als Kunde möchte ich eine zweistufen Anmeldung, um die Sicherheit zu erhöhen.
+
+US#010.09: Als Kunde möchte ich Reservierungen ändern können. 
+US#010.10: Als Kunde möchte ich den Preiskatalog einsehen können, um Preise vergleichen zu können.
+US#010.11: Als Kunde möchte ich die einzelnen Produkte übersichtlich Gelistet sehen, um diese zu vergleichen.
+US#010.12: Als Kunde möchte ich Bewertungen schreiben, um Kritik als auch Lob weitergeben zu können.
+US#010.13: Als Kunde möchte ich eine Übersicht zu meinen vergangegen Bestellungen/ Reservierungen haben.
+US#010.14: Als Kunde möchte ich eine Suchfunktion benutzen können, um das passende Produkt schnell finden zu können.
+US#010.15: Als Kunde möchte ich die Suchfunktion mit weiteren Filtern anpassen können.
+US#010.16: Als Kunde möchte ich das es Produkt-Kategorien gibt.
+US#010.17: Als Kunde möchte ich Reservieren können.
+
+Admin:
+US#020.01: Als Admin möchte ich mich als Admin anmelden, um weitreichende Informationen zu erhalten und ggf. Änderungen vorzunehemen.
+US#020.02: Als Admin möchte ich einen Kunden löschen.
+US#020.03: Als Admin möchte ich eine Statistik, um zu sehen wie viele Personen auf meiner Website waren.
+US#020.04: Als Admin möchte ich eine einfache Verwaltung, um schnell Änderung vorzunehmen zu können.
+US#020.05: Als Admin möchte ich eine Übersicht zu den täglichen Reservierungen.
+US#020.06: Als Admin möchte ich Reservierungen von Kunden stonieren können.
+
+anonymer Besucher:
+US#030.01: Als anonymer Besucher möchte ich eine gesamt übersicht zu den Preisen, um Preise zu vergleichen.
+US#030.02: Als anoymer Besucher möchte ich eine Übersicht zu den gebotenen Produkten sehen, um schnell das passende Produkt zu finden.
+US#030.03: Als anoymer Besucher möchte ich möchte ich eine aufgeräumte Website sehen
+US#030.04: Als anoymer Besucher möchte ich eine Suchfunktion, um schnell das gewünschte Produkt finden zu können
+US#030.05: Als anonymer Besucher möchte ich eine Filterfunktion, um das Suchergebniss auf mich anpassen zu können.
+US#030.06: Als anoymer Besucher möchte ich Bewertungen von Kunden einsehen, um zu sehen wie zuverlässig der Vermieter ist.
+
