@@ -15,6 +15,7 @@ class CalculatorLogic implements CalculatorLogicIntf {
 	private CalculatorGUI_Intf view;
 	private StringBuffer dsb = new StringBuffer();
 	private final double VAT_RATE = 19.0;
+	private double ergebnis= 0;
 
 	CalculatorLogic() {
 	}
@@ -67,16 +68,38 @@ class CalculatorLogic implements CalculatorLogicIntf {
 
 			case K_DIV:
 				throw new ArithmeticException( "ERR: div by zero" );
-			case K_MUL:	appendBuffer( "*" ); break;
-			case K_PLUS:appendBuffer( "+" ); break;
+			case K_MUL:	appendBuffer( "*" );
+			; break;
+			
+			case K_PLUS: appendBuffer( "+" );
+			/*
+			String zeile = dsb.toString(); 
+			while(zeile.endsWith("++")) {
+				zeile.replace("+", "");
+			}
+			*/
+			break;
+			
 			case K_MIN:	appendBuffer( "-" ); break;
-			case K_EQ:	appendBuffer( "=" ); break;
+			
+			case K_EQ:	appendBuffer( "=" );
+			addieren();
+			subtrahieren();
+			multiplizieren();
+			;
+			 
+			
+			
+			break;
 
 			case K_VAT:
+				double mwst = (double) (Double.parseDouble(dsb.toString())*0.19);
+				double brutto = Double.parseDouble(dsb.toString());
+				double netto= brutto - mwst;  
 				view.writeSideArea(
-					"Brutto:  1,000.00\n" +
-					VAT_RATE + "% MwSt:  159.66\n" +
-					"Netto:  840.34"
+					"Brutto:"  + brutto +"€" + "\n" +
+					VAT_RATE + "% MwSt:" + mwst +"€"  + "\n" +
+					"Netto:" + netto +"€"
 				);
 				break;
 
@@ -108,8 +131,112 @@ class CalculatorLogic implements CalculatorLogicIntf {
 	 */
 	private void appendBuffer( String d ) {
 		if( dsb.length() <= CalculatorGUI_Intf.DISPLAY_MAXDIGITS ) {
-			dsb.append( d );
+			
+			if(d =="+" || d =="-" || d== "*" || d== "/" || d=="=" ) {
+				String opperator = dsb.toString();
+				
+				if(!(opperator.endsWith("+")||opperator.endsWith("-") ||opperator.endsWith("*")||opperator.endsWith("/"))) {
+					dsb.append(d);
+				}
+				
+			}else {
+				dsb.append(d);
+			}
+			
 		}
 	}
+	private void subtrahieren() {
+		String zeile1=dsb.toString();
+		String zeile;
+		String teil1;
+		String teil2;
+		double part1;
+		double part2;
+		if(zeile1.contains("-")) 
+		{
+			//teile
+			zeile=zeile1.replaceAll("=", "");
+			teil1=zeile.substring(0, zeile.indexOf("-"));
+			zeile.replace("=", "");
+			teil2=zeile.substring(zeile.indexOf("-")+1,zeile.length());
+			
+			//addiere
+			part1=Double.parseDouble(teil1);
+					part2=Double.parseDouble(teil2);
+					
+					ergebnis=part1-part2;
+					view.writeTextArea(dsb.append(ergebnis).toString());
+		}
+		else if(zeile1.contains("*")||zeile1.contains("+"))
+		{
+		//view.writeSideArea("keine Subtraktion");
+		}
+			else{
+			view.writeSideArea("Syntax Error");
+		}	
+	}
+	private void addieren() {
+		String zeile1=dsb.toString();
+		String zeile;
+		String teil1;
+		String teil2;
+		double summand;
+		double summand2;
+		if(zeile1.contains("+")) 
+		{
+			//teile
+			zeile=zeile1.replaceAll("=", "");
+			teil1=zeile.substring(0, zeile.indexOf("+"));
+			zeile.replace("=", "");
+			teil2=zeile.substring(zeile.indexOf("+")+1,zeile.length());
+			
+			//addiere
+			summand=Double.parseDouble(teil1);
+					summand2=Double.parseDouble(teil2);
+					
+					ergebnis=summand+summand2;
+					view.writeTextArea(dsb.append(ergebnis).toString());
+		}
+		else if(zeile1.contains("*")||zeile1.contains("-"))
+		{
+		//view.writeSideArea("keine Addition");
+		}
+		else 
+		{
+			view.writeSideArea("Syntax Error");
+		}
+		
+	}
 
+	private void multiplizieren() {
+		String zeile1=dsb.toString();
+		String zeile;
+		String teil1;
+		String teil2;
+		double part1;
+		double part2;
+		if(zeile1.contains("*")) 
+		{
+			//teile
+			zeile=zeile1.replaceAll("=", "");
+			teil1=zeile.substring(0, zeile.indexOf("*"));
+			zeile.replace("=", "");
+			teil2=zeile.substring(zeile.indexOf("*")+1,zeile.length());
+			
+			//addiere
+			part1=Double.parseDouble(teil1);
+					part2=Double.parseDouble(teil2);
+					
+					ergebnis=part1*part2;
+					view.writeTextArea(dsb.append(ergebnis).toString());
+		}
+		else if(zeile1.contains("-")||zeile1.contains("+"))
+		{
+		//view.writeSideArea("keine Multiplikation");
+		}
+		else 
+		{
+			view.writeSideArea("Syntax Error");
+		}
+	}
 }
